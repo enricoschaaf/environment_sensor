@@ -17,13 +17,15 @@ defmodule EnvironmentSensorWeb.Router do
   scope "/", EnvironmentSensorWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", IndexLive, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", EnvironmentSensorWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", EnvironmentSensorWeb do
+    pipe_through :api
+
+    post "/temperature", TemperatureController, :receive
+  end
 
   # Enables LiveDashboard only for development
   #
