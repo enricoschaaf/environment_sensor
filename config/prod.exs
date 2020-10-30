@@ -10,6 +10,9 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :environment_sensor, EnvironmentSensorWeb.Endpoint,
+  http: [:inet6, port: System.get_env("PORT") || 4000],
+  url: [scheme: "https", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto], host: nil],
   check_origin: ["//*.enricoschaaf.com", "//*.gigalixirapp.com"],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
