@@ -10,7 +10,7 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :environment_sensor, EnvironmentSensorWeb.Endpoint,
-  check_origin: ["enviroment.enricoschaaf.com", "#{APP_NAME}.gigalixirapp.com"],
+  check_origin: ["https://enviroment.enricoschaaf.com", "https://#{APP_NAME}.gigalixirapp.com"],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
